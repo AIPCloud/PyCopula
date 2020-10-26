@@ -111,7 +111,7 @@ def mle(copula, X, marginals, hyper_param, hyper_param_start=None, hyper_param_b
 		else:
 			lh += sum([ np.log(copula.pdf_param(marginCDF[i], x[0:thetaOffset])) for i in range(n)])
 		# The second member : sum of PDF
-		print("OK")
+		# print("OK")
 		lh += sum([ sum(np.log(marginals[j].pdf(np.transpose(X)[j], **hyperOptimizeParams[j]))) for j in range(d) ])
 		return lh
 	
